@@ -34,14 +34,16 @@ function Footer() {
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div className="mx-auto max-w-sm lg:max-w-none">
-            <Logo />
-            <p className="mt-4 text-center text-gray-300 font-mukta lg:text-left lg:text-lg">
+            <div className="flex items-center justify-center md:justify-start">
+              <Logo />
+            </div>
+            <p className="mt-4 text-center text-gray-300/70 font-mukta lg:text-left lg:text-base">
               Turn Your Questions Into Code with DevSnippets. Collaborate with your team and build snippets to help others.
             </p>
 
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-orange-600/80 transition hover:text-orange-500"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -63,7 +65,7 @@ function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-orange-600/80 transition hover:text-orange-500"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -85,7 +87,7 @@ function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-orange-600/80 transition hover:text-orange-500"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -103,7 +105,7 @@ function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-orange-600/80 transition hover:text-orange-500"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -125,7 +127,7 @@ function Footer() {
               </a>
 
               <a
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-orange-600/80 transition hover:text-orange-500"
                 href="#"
                 target="_blank"
                 rel="noreferrer"

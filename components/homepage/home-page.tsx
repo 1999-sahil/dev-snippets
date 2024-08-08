@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
+import Description from './app-description'
 
 function HomePage() {
   return (
-    <div className='flex items-center justify-center mt-6 px-10'>
-        <div className='flex flex-col gap-6 items-center justify-center'>
+    <div className='flex items-center justify-center mt-8 px-10'>
+        <div className='flex flex-col gap-10 items-center justify-center'>
             <h1 className='text-white font-poppins text-4xl md:text-5xl text-center font-semibold leading-[48px] md:leading-[62px]'>
                 <span className="bg-gradient-to-r from-[#F28500] to-[#FFBF00] inline-block text-transparent bg-clip-text mr-2">Organise</span>
                 Your Code Snippets
