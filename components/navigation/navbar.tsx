@@ -7,9 +7,11 @@ import Logo from '@/components/navigation/logo'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from "react-icons/io5"
 import MobileNavigation from './mobile-navigation'
+import { useAuth } from '@clerk/nextjs'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { userId } = useAuth();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -57,15 +59,27 @@ function Navbar() {
 
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex sm:gap-4">
-              <button className='underline underline-offset-2 font-medium font-mukta text-[#F28500]'>
-                Login
-              </button>
+              {userId ? (
+                <Link href="/my-notes">
+                  <button className='font-mukta font-medium bg-gradient-to-r from-[#F28500] to-[#FFBF00] text-white px-5 py-1.5 rounded-md'>
+                    Dashboard
+                  </button>
+                </Link>
+              ) : (
+                <div className="flex items-center gap-4">
+                  <Link href="/sign-in">
+                    <button className='underline underline-offset-2 font-medium font-mukta text-[#F28500]'>
+                      Login
+                    </button>
+                  </Link>
 
-              <div className="hidden sm:flex">
-                <button className='font-mukta font-medium bg-gradient-to-r from-[#F28500] to-[#FFBF00] text-white px-5 py-1.5 rounded-md'>
-                  Register
-                </button>
-              </div>
+                  <Link href="/sign-up">
+                    <button className='font-mukta font-medium bg-gradient-to-r from-[#F28500] to-[#FFBF00] text-white px-5 py-1.5 rounded-md'>
+                      Register
+                    </button>
+                  </Link>
+                </div>
+              )}
             </div>
 
             <div className="relative">
