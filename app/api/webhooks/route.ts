@@ -2,7 +2,7 @@ import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
 
-import dbConnect from '@/app/lib/connect'
+import connect from '@/app/lib/connect'
 import User from '@/app/models/UserSchema'
 
 export async function POST(req: Request) {
@@ -52,11 +52,12 @@ export async function POST(req: Request) {
 
   // Do something with the payload
   // For this guide, you simply log the payload to the console
-  const { id } = evt.data;
-  const eventType = evt.type;
+  // const { id } = evt.data;
+  // const eventType = evt.type;
 
-  if (eventType === "user.created") {
+  if (evt.type === "user.created") {
     const { id, email_addresses } = evt.data;
+    console.log("userId:", evt.data.id);
 
     const newUser = {
       clerkUserId: id,
@@ -64,16 +65,19 @@ export async function POST(req: Request) {
     };
 
     try {
-      await dbConnect();
+      await connect();
       await User.create(newUser);
       console.log("User is Created!");
     } catch (error) {
-      console.log(error);
+        console.error('Error creating user:', error);
+        return new Response(`Error creating user: ${error}`, {
+        status: 500,
+      });
     }
   }
 
-  console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
-  console.log('Webhook body:', body)
+  //console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
+  //console.log('Webhook body:', body)
 
   return new Response('', { status: 200 })
 }
