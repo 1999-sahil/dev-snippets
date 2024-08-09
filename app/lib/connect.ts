@@ -1,6 +1,7 @@
+"use server";
 import mongoose from "mongoose";
 
-async function connect(): Promise<void> {
+export async function connect(): Promise<void> {
     try {
         await mongoose.connect(process.env.DATABASE_URL as string);
         console.log("Mongoose DB Connect.");
