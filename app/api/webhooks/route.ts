@@ -1,6 +1,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
+
 import dbConnect from '@/app/lib/connect'
 import User from '@/app/models/UserSchema'
 
@@ -58,16 +59,16 @@ export async function POST(req: Request) {
     const { id, email_addresses } = evt.data;
 
     const newUser = {
-        clerkUserId: id,
-        emailAddress: email_addresses[0].email_address,
+      clerkUserId: id,
+      emailAddress: email_addresses[0].email_address,
     };
 
     try {
-        await dbConnect();
-        await User.create(newUser);
-        console.log("User is Created!");
+      await dbConnect();
+      await User.create(newUser);
+      console.log("User is Created!");
     } catch (error) {
-        
+      console.log(error);
     }
   }
 
