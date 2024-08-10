@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { BorderAll, DeleteOutlineOutlined, FavoriteBorder } from '@mui/icons-material'
+import { BorderAll, DeleteOutlineOutlined, FavoriteBorder, Logout } from '@mui/icons-material'
 
 interface GlobalContextType {
     sideBarMenuObject: {
@@ -31,9 +31,10 @@ export default function GlobalContextProvider({
 }) {
 
     const [sideBarMenu, setSideBarMenu] = useState<SideBarMenu[]>([
-        { id: 1, name: "All Snippets", isSelected: true, icons: <BorderAll /> },
-        { id: 2, name: "Favorites", isSelected: false, icons: <FavoriteBorder /> },
-        { id: 3, name: "Trash", isSelected: false, icons: <DeleteOutlineOutlined /> },
+        { id: 1, name: "All Snippets", isSelected: true, icons: <BorderAll sx={{ fontSize: 18 }} /> },
+        { id: 2, name: "Favorites", isSelected: false, icons: <FavoriteBorder sx={{ fontSize: 18 }} /> },
+        { id: 3, name: "Trash", isSelected: false, icons: <DeleteOutlineOutlined sx={{ fontSize: 18 }} /> },
+        { id: 4, name: "Logout", isSelected: false, icons: <Logout sx={{ fontSize: 18 }} /> },
     ]);
 
     return (
