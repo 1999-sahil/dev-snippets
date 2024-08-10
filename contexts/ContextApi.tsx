@@ -1,14 +1,16 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { BorderAll, DeleteOutlineOutlined, FavoriteBorder, Logout } from '@mui/icons-material'
+import {
+    BorderAll,
+    DarkMode,
+    DeleteOutlineOutlined,
+    FavoriteBorder,
+    LightMode,
+    Logout
+} from '@mui/icons-material'
 
-interface GlobalContextType {
-    sideBarMenuObject: {
-        sideBarMenu: SideBarMenu[];
-        setSideBarMenu: React.Dispatch<React.SetStateAction<SideBarMenu[]>>;
-    };
-};
+
 
 interface SideBarMenu {
     id: number;
@@ -17,10 +19,31 @@ interface SideBarMenu {
     icons: React.ReactNode;
 };
 
+interface DarkModeType {
+    id: number;
+    icon: React.ReactNode;
+    isSelected: boolean;
+};
+
+interface GlobalContextType {
+    sideBarMenuObject: {
+        sideBarMenu: SideBarMenu[];
+        setSideBarMenu: React.Dispatch<React.SetStateAction<SideBarMenu[]>>;
+    };
+    darkModeObject: {
+        darkMode: DarkModeType[];
+        setDarkMode: React.Dispatch<React.SetStateAction<DarkModeType[]>>;
+    };
+};
+
 const ContextProvider = createContext<GlobalContextType>({
     sideBarMenuObject: {
         sideBarMenu: [],
         setSideBarMenu: () => {},
+    },
+    darkModeObject: {
+        darkMode: [],
+        setDarkMode: () => {},
     },
 });
 
@@ -37,9 +60,17 @@ export default function GlobalContextProvider({
         { id: 4, name: "Logout", isSelected: false, icons: <Logout sx={{ fontSize: 18 }} /> },
     ]);
 
+    const [darkMode, setDarkMode] = useState<DarkModeType[]>([
+        { id: 1, icon: <LightMode sx={{ fontSize: 18 }} />, isSelected: true },
+        { id: 2, icon: <DarkMode sx={{ fontSize: 18 }} />, isSelected: false },
+    ]);
+
     return (
         <ContextProvider.Provider
-            value={{ sideBarMenuObject: { sideBarMenu, setSideBarMenu } }}
+            value={{
+                sideBarMenuObject: { sideBarMenu, setSideBarMenu } ,
+                darkModeObject: { darkMode, setDarkMode },
+            }}
         >
             {children}
         </ContextProvider.Provider>
