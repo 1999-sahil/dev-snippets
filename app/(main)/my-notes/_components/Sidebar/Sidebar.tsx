@@ -10,9 +10,10 @@ function Sidebar() {
   const {
     openSidebarObject: { openSidebar, setOpenSidebar },
   } = useGlobalContext();
+  console.log("opensidebar", openSidebar);
 
   return (
-    <div className={`${openSidebar ? "fixed z-50 shadow-lg" : "max-md:hidden"} w-full m-2 rounded-md pr-10 pl-5 pt-5 flex flex-col gap-2 h-screen dark:bg-zinc-900 bg-zinc-200/50`}>
+    <div className={`${openSidebar ? "max-md:fixed z-[9999] shadow-lg" : "max-md:hidden"} rounded-md pr-10 pl-5 pt-5 flex flex-col gap-2 h-screen dark:bg-zinc-900 bg-zinc-200`}>
       <Logo />
       <QuickLinks />
       <Languages />

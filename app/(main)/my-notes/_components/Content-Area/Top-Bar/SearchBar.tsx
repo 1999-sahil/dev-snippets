@@ -4,11 +4,11 @@ import { FaAnglesRight } from 'react-icons/fa6'
 
 function SearchBar() {
   return (
-    <div className='relative pl-3 w-[60%] h-[38px] bg-white dark:bg-zinc-800 rounded-3xl flex items-center gap-2'>
+    <div className='relative pl-3 max-md:pl-2 w-[60%] h-[38px] bg-white dark:bg-zinc-800 rounded-3xl flex items-center gap-2 max-md:gap-1'>
       <Search className='text-[#F28500]' sx={{ fontSize: 20 }} />
       <input
-        placeholder='Search your snippet here...'
-        className='w-[70%] outline-none text-sm bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-300 font-poppins'
+        placeholder='Search your snippet ...'
+        className='w-[60%] outline-none text-xs bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-300 font-poppins'
       />
       <AddSnippetButton />
     </div>
@@ -17,10 +17,10 @@ function SearchBar() {
 
 function AddSnippetButton() {
   return (
-    <div className="flex absolute gap-2 px-2 rounded-3xl bg-[#F28500] p-1 text-[13px] font-poppins text-white top-[5px] max-md:top-[4px] right-[6px] items-center cursor-pointer select-none">
+    <div className="flex absolute gap-2 px-2 max-md:px-0 rounded-3xl max-md:rounded-full bg-[#F28500] p-1 max-md:p-0 text-[13px] font-poppins text-white top-[5px] right-[6px] items-center justify-center cursor-pointer select-none">
       <div className='hidden md:flex'>Snippet</div>
-      <div className='max-md:text-lg max-md:p-[2px]'>
-        <FaAnglesRight />
+      <div className='max-md:text-lg max-md:p-1.5'>
+        <FaAnglesRight className='text-base' />
       </div>
     </div>
   )

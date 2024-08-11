@@ -15,12 +15,12 @@ function SidebarMenuIcon() {
       {!openSidebar ? (
         <FiMenu
           onClick={() => setOpenSidebar(!openSidebar)}
-          className="text-zinc-600 cursor-pointer md:hidden block"
+          className="text-gray-800 dark:text-gray-200 w-6 h-6 cursor-pointer md:hidden block"
         />
       ) : (
         <IoClose
           onClick={() => setOpenSidebar(!openSidebar)}
-          className="text-zinc-600 cursor-pointer md:hidden block"
+          className="text-gray-800 dark:text-gray-200 w-6 h-6 cursor-pointer md:hidden block"
         />
       )}
     </>

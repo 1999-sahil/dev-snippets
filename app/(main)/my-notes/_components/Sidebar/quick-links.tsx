@@ -30,7 +30,7 @@ function QuickLinks() {
                     key={index}
                     onClick={() => clickedMenu(index)}
                     className={`flex items-center cursor-pointer rounded-md p-2 select-none gap-1
-                        ${menu.isSelected ? "bg-[#F28500] text-white" : "text-gray-500 dark:text-gray-400 hover:bg-zinc-200 dark:hover:bg-zinc-800"}
+                        ${menu.isSelected ? "bg-[#F28500] text-white" : "text-gray-600 dark:text-gray-400 hover:bg-zinc-300 dark:hover:bg-zinc-800"}
                     `}
                 >
                     {menu.icons}

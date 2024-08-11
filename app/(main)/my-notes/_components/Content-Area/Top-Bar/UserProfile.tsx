@@ -30,7 +30,7 @@ function UserProfile() {
                     alt="user-profile"
                     width={50}
                     height={50}
-                    className='w-9 h-9 rounded-full mb-[5px] object-contain'
+                    className='w-9 h-9 rounded-full mb-[5px] object-contain ring-1 p-[1px] ring-orange-500'
                 />
             )}
 
