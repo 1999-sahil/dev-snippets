@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import GlobalContextProvider from "@/contexts/ContextApi";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <ClerkProvider>
         <GlobalContextProvider>
-          <body className={`inter.className bg-[#121213]`}>
-            {children}
-          </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <body className={`inter.className`}>
+              {children}
+            </body>
+          </ThemeProvider>
         </GlobalContextProvider>
       </ClerkProvider>
     </html>

@@ -9,15 +9,15 @@ function UserProfile() {
     const imageUrl = user?.imageUrl;
 
     const loadingImage = (
-        <div className="w-9 h-9 rounded-full mb-[5px] bg-slate-200"></div>
+        <div className="w-9 h-9 rounded-full mb-[5px] bg-gray-200"></div>
     );
 
     const loadingUserName = (
-        <span className='font-semobold bg-slate-100 h-4 w-[100px]'></span>
+        <span className='font-semobold bg-gray-200 h-4 w-[100px]'></span>
     );
 
     const loadingUserEmail = (
-        <span className='text-slate-500 text-[11px] bg-slate-100 h-2 w-[130px]'></span>
+        <span className='text-gray-500 text-[11px] bg-gray-200 h-2 w-[130px]'></span>
     );
 
     return (
@@ -34,11 +34,11 @@ function UserProfile() {
                 />
             )}
 
-            <div className={`flex flex-col text-sm ${!user ? "gap-1" : ""}`}>
+            <div className={`hidden md:flex flex-col text-sm ${!user ? "gap-1" : ""}`}>
                 {!user ? (
                     loadingUserName
                 ) : (
-                    <span className="font-semibold text-gray-100 font-mukta">
+                    <span className="font-semibold text-zinc-600 dark:text-zinc-200 font-mukta">
                         {user?.firstName} {user?.lastName}
                     </span>
                 )}
@@ -46,7 +46,7 @@ function UserProfile() {
                 {!user ? (
                     loadingUserEmail
                 ) : (
-                    <span className="text-gray-500 text-[11px] font-poppins">
+                    <span className="text-gray-600 dark:text-zinc-300 text-[11px] font-poppins">
                         {user?.emailAddresses[0].emailAddress}
                     </span>
                 )}
