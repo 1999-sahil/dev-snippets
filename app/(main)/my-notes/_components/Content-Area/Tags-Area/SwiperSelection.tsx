@@ -12,7 +12,7 @@ import { Plus } from 'lucide-react';
 
 function SwiperSelection() {
     return (
-        <div className="p-3 rounded-lg flex gap-5 bg-white dark:bg-[#121213] text-gray-800 dark:text-white">
+        <div className="p-3 rounded-lg flex gap-5 bg-zinc-200/50 dark:bg-zinc-900 text-gray-800 dark:text-white">
             <div className='overflow-x-auto flex w-full'>
                 <Swiper
                     slidesPerView="auto"
@@ -27,6 +27,10 @@ function SwiperSelection() {
                     <SwiperSlide className='text-gray-800 dark:text-gray-200'>Java</SwiperSlide>
                     <SwiperSlide className='text-gray-800 dark:text-gray-200'>Django</SwiperSlide>
                     <SwiperSlide className='text-gray-800 dark:text-gray-200'>Python</SwiperSlide>
+                    <SwiperSlide className='text-gray-800 dark:text-gray-200'>ReactJs</SwiperSlide>
+                    <SwiperSlide className='text-gray-800 dark:text-gray-200'>Vercel</SwiperSlide>
+                    <SwiperSlide className='text-gray-800 dark:text-gray-200'>Frontend</SwiperSlide>
+                    <SwiperSlide className='text-gray-800 dark:text-gray-200'>DevOps</SwiperSlide>
                 </Swiper>
                 <button className='bg-[#F28500] p-1 rounded-md px-2.5 flex gap-1 items-center text-white'>
                     <Plus className='' />

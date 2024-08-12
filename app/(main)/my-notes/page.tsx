@@ -3,16 +3,22 @@ import { UserButton } from '@clerk/nextjs'
 import React from 'react'
 import Sidebar from './_components/Sidebar/Sidebar'
 import ContentArea from './_components/Content-Area/content-area'
+import SidebarNavigation from './_components/Sidebar/navigation-sidebar'
 
 function page() {
   return (
-    <div className={`flex w-full dark:bg-[#121213] bg-white`}>
-      <div className=''>
+    <div className=""> {/** {`flex w-full dark:bg-[#121213] bg-white`} */}
+      {/**
+        <div className=''>
         <Sidebar />
-      </div>
-      <div className='md:flex-1 w-full md:px-5'>
+      </div> */}
+      {/**
+       * <div className='md:flex-1 w-full md:px-5'>
         <ContentArea />
       </div>
+       */}
+
+      <SidebarNavigation />
     </div>
   )
 }

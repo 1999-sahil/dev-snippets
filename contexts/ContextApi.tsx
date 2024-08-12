@@ -1,14 +1,7 @@
 "use client";
 
+import { Captions, Heart, LogOut, MoonStar, Sun, Trash } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
-import {
-    BorderAll,
-    DarkMode,
-    DeleteOutlineOutlined,
-    FavoriteBorder,
-    LightMode,
-    Logout
-} from '@mui/icons-material'
 
 
 
@@ -62,18 +55,18 @@ export default function GlobalContextProvider({
 }) {
 
     const [sideBarMenu, setSideBarMenu] = useState<SideBarMenu[]>([
-        { id: 1, name: "All Snippets", isSelected: true, icons: <BorderAll sx={{ fontSize: 18 }} /> },
-        { id: 2, name: "Favorites", isSelected: false, icons: <FavoriteBorder sx={{ fontSize: 18 }} /> },
-        { id: 3, name: "Trash", isSelected: false, icons: <DeleteOutlineOutlined sx={{ fontSize: 18 }} /> },
-        { id: 4, name: "Logout", isSelected: false, icons: <Logout sx={{ fontSize: 18 }} /> },
+        { id: 1, name: "All Snippets", isSelected: true, icons: <Captions size={20} /> },
+        { id: 2, name: "Favorites", isSelected: false, icons: <Heart size={20} /> },
+        { id: 3, name: "Trash", isSelected: false, icons: <Trash size={20} /> },
+        { id: 4, name: "Logout", isSelected: false, icons: <LogOut size={20} /> },
     ]);
 
     const [darkMode, setDarkMode] = useState<DarkModeType[]>([
-        { id: 1, icon: <LightMode sx={{ fontSize: 18 }} />, isSelected: true },
-        { id: 2, icon: <DarkMode sx={{ fontSize: 18 }} />, isSelected: false },
+        { id: 1, icon: <Sun />, isSelected: true },
+        { id: 2, icon: <MoonStar />, isSelected: false },
     ]);
 
-    const [openSidebar, setOpenSidebar] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(true);
 
     return (
         <ContextProvider.Provider

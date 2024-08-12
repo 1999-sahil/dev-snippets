@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        mukta: ["Mukta", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
+        ubuntu: ["Ubuntu Condensed", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
