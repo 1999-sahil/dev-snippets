@@ -3,7 +3,7 @@
 import { useGlobalContext } from "@/contexts/ContextApi";
 import React from "react";
 
-function NotesContent() {
+function EditSnippet() {
     const {
         openContentNoteObject: { openContentNote, setOpenContentNote },
     } = useGlobalContext();
@@ -18,4 +18,4 @@ function NotesContent() {
     )
 }
 
-export default NotesContent
+export default EditSnippet

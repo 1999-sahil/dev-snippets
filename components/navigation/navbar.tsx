@@ -8,6 +8,7 @@ import { FiMenu } from 'react-icons/fi'
 import { IoClose } from "react-icons/io5"
 import MobileNavigation from './mobile-navigation'
 import { useAuth } from '@clerk/nextjs'
+import { ModeToggle } from '../theme-toggle'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,8 @@ function Navbar() {
   };
 
   return (
-    <header className="bg-[#121213] py-2 px-4 md:px-0">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <header className="bg-white dark:bg-[#121213] border-b shadow-md drop-shadow-md">
+      <div className="mx-auto max-w-screen-xl px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <Link href="/">
@@ -31,36 +32,36 @@ function Navbar() {
             <nav aria-label="Global">
               <ul className="flex items-center gap-8 text-base font-mukta">
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> Home </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> Home </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> Developers </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> Developers </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> Students </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> Students </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> VSCode </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> VSCode </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> Pricing </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> Pricing </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-300 font-medium transition hover:text-gray-400" href="#"> Blog </a>
+                  <a className="text-gray-900 dark:text-gray-300 font-medium transition hover:text-gray-800 dark:hover:text-gray-400" href="#"> Blog </a>
                 </li>
               </ul>
             </nav>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex sm:gap-4">
+            <div className="hidden sm:flex sm:gap-4 sm:items-center">
               {userId ? (
-                <Link href="/my-notes">
+                <Link href="/snippets">
                   <button className='font-mukta font-medium bg-gradient-to-r from-[#F28500] to-[#FFBF00] text-white px-5 py-1.5 rounded-md'>
                     Dashboard
                   </button>
@@ -80,15 +81,19 @@ function Navbar() {
                   </Link>
                 </div>
               )}
+              <ModeToggle />
             </div>
 
             <div className="relative">
-              <div className="block md:hidden">
+              <div className="flex items-center md:hidden gap-2">
+                <div className="sm:hidden">
+                  <ModeToggle />
+                </div>
                 <button className="text-gray-100" onClick={toggleDropdown}>
                   {!isOpen ? (
-                    <FiMenu className='text-3xl text-gray-100 hover:text-white' />
+                    <FiMenu className='text-2xl text-zinc-900 dark:text-zinc-200 hover:text-zinc-800 dark:hover:text-zinc-300' />
                   ) : (
-                    <IoClose className='text-3xl text-gray-100 hover:text-white' />
+                    <IoClose className='text-2xl text-zinc-900 dark:text-zinc-200 hover:text-zinc-800 dark:hover:text-zinc-300' />
                   )}
                 </button>
               </div>

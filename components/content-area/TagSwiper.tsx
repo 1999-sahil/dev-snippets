@@ -10,7 +10,7 @@ import { FreeMode } from 'swiper/modules';
 //import GlobalContextProvider, { useGlobalContext } from '@/contexts/ContextApi';
 import { Plus } from 'lucide-react';
 
-function SwiperSelection() {
+function TagSwiper() {
     return (
         <div className="p-3 rounded-lg flex gap-5 bg-zinc-200/50 dark:bg-zinc-900 text-gray-800 dark:text-white">
             <div className='overflow-x-auto flex w-full'>
@@ -41,4 +41,4 @@ function SwiperSelection() {
     )
 }
 
-export default SwiperSelection
+export default TagSwiper

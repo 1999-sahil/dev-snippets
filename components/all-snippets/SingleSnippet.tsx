@@ -9,13 +9,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { lightfair } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-function SingleNote() {
+function SingleSnippet() {
     const {
         openContentNoteObject: { openContentNote, setOpenContentNote }
     } = useGlobalContext();
 
     return (
-        <div onClick={() => setOpenContentNote(true)} className={`bg-zinc-200/50 dark:bg-zinc-900 max-sm:w-full w-[320px] rounded-md py-4 ${openContentNote ? "w-full" : "w-[380px]"}`}>
+        <div onClick={() => setOpenContentNote(true)} className={`bg-zinc-200/50 dark:bg-zinc-900 max-sm:w-full w-[280px] rounded-md py-4 ${openContentNote ? "w-full" : "w-[380px]"}`}>
             <NoteHeader />
             <NoteDate />
             <NoteTags />
@@ -110,4 +110,4 @@ function NoteFooter() {
     )
 }
 
-export default SingleNote
+export default SingleSnippet

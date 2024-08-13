@@ -9,7 +9,7 @@ function Footer() {
     <footer className="">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
-          <strong className="block text-center font-ubuntu text-xl font-bold text-gray-200 sm:text-3xl">
+          <strong className="block text-center font-ubuntu text-xl font-bold text-gray-800 dark:text-gray-200 sm:text-3xl">
             Want us to email you with the latest blockbuster snippets?
           </strong>
 
@@ -21,7 +21,7 @@ function Footer() {
               </label>
 
               <input
-                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
+                className="w-full outline-none text-zinc-900 rounded-full border-zinc-300 dark:border-gray-200 bg-zinc-300 dark:bg-gray-100 p-4 pe-32 text-sm font-medium "
                 id="email"
                 type="email"
                 placeholder="john@doe.com"
@@ -39,7 +39,7 @@ function Footer() {
             <div className="flex items-center justify-center md:justify-start">
               <Logo />
             </div>
-            <p className="mt-4 text-center text-gray-300/70 font-mukta lg:text-left lg:text-base">
+            <p className="mt-4 text-center text-zinc-900 dark:text-gray-300/70 font-mukta lg:text-left lg:text-base">
               Turn Your Questions Into Code with DevSnippets. Collaborate with your team and build snippets to help others.
             </p>
 
@@ -154,12 +154,12 @@ function Footer() {
 
           <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
-              <strong className="font-semibold text-gray-300 font-ubuntu underline underline-offset-2 decoration-orange-500"> Services </strong>
+              <strong className="font-semibold text-zinc-900 dark:text-gray-300 font-ubuntu underline underline-offset-2 decoration-orange-500"> Services </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -169,7 +169,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     Snippets
@@ -178,7 +178,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     Developer Snippets
@@ -187,7 +187,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     JS Snippets
@@ -197,12 +197,12 @@ function Footer() {
             </div>
 
             <div>
-              <strong className="font-semibold font-ubuntu text-gray-300 underline underline-offset-2 decoration-orange-500"> About </strong>
+              <strong className="font-semibold font-ubuntu text-zinc-900 dark:text-gray-300 underline underline-offset-2 decoration-orange-500"> About </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -212,7 +212,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -222,7 +222,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -232,7 +232,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -243,12 +243,12 @@ function Footer() {
             </div>
 
             <div>
-              <strong className="font-semibold font-ubuntu text-gray-300 underline underline-offset-2 decoration-orange-500"> Support </strong>
+              <strong className="font-semibold font-ubuntu text-zinc-900 dark:text-gray-300 underline underline-offset-2 decoration-orange-500"> Support </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -258,7 +258,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -268,7 +268,7 @@ function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-300 font-mukta transition hover:text-gray-700/75"
+                    className="text-zinc-900 dark:text-gray-300 font-mukta transition hover:text-gray-700/75"
                     href="#"
                   >
                     {" "}
@@ -280,8 +280,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-gray-100 pt-8">
-          <p className="text-center text-xs/relaxed text-gray-300 font-poppins">
+        <div className="mt-16 border-t pt-8">
+          <p className="text-center text-xs/relaxed text-zinc-900 dark:text-gray-300 font-poppins">
             © Company 2024. All rights reserved.
             <br />
             Created with

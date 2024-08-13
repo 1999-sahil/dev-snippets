@@ -5,7 +5,7 @@ import React from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { IoClose } from 'react-icons/io5'
 
-function SidebarMenuIcon() {
+function TopbarMenuIcon() {
   const {
     openSidebarObject: { openSidebar, setOpenSidebar },
   } = useGlobalContext();
@@ -27,4 +27,4 @@ function SidebarMenuIcon() {
   )
 }
 
-export default SidebarMenuIcon
+export default TopbarMenuIcon

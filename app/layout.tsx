@@ -20,20 +20,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ClerkProvider>
-        <GlobalContextProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <body className={`inter.className`}>
+      <body className={inter.className}>
+        <ClerkProvider>
+          <GlobalContextProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
               {children}
-            </body>
-          </ThemeProvider>
-        </GlobalContextProvider>
-      </ClerkProvider>
+            </ThemeProvider>
+          </GlobalContextProvider>
+        </ClerkProvider>
+      </body>
     </html>
   );
 }

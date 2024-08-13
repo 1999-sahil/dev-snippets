@@ -76,7 +76,7 @@ function MobileNavigation() {
 
           <div>
             {userId ? (
-              <Link href="/my-notes" className="w-full flex items-center justify-center">
+              <Link href="/snippets" className="w-full flex items-center justify-center">
                 <button className="font-mukta w-full font-medium bg-gradient-to-r from-[#F28500] to-[#FFBF00] text-white px-5 py-1.5 rounded-md">
                   Dashboard
                 </button>
