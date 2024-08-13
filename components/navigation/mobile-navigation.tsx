@@ -1,3 +1,5 @@
+'use client'
+
 import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";

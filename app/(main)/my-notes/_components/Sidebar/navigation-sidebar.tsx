@@ -6,7 +6,6 @@ import NavigationLinks from './navigation-item'
 import { Menu } from 'lucide-react'
 import { useGlobalContext } from '@/contexts/ContextApi';
 import UserProfile from './user-profile'
-import { ModeToggle } from '@/components/theme-toggle'
 
 function SidebarNavigation() {
   const {
@@ -14,12 +13,12 @@ function SidebarNavigation() {
   } = useGlobalContext();
 
   return (
-    <div className={`min-h-screen bg-zinc-200/50 dark:bg-zinc-800 transition-all duration-500
-        ${openSidebar ? 'w-72' : 'w-16'} flex flex-col gap-4
+    <div className={`min-h-screen bg-zinc-200/50 max-md:bg-zinc-200 dark:bg-zinc-900 transition-all duration-500
+        ${openSidebar ? 'w-72 max-md:fixed max-md:z-50' : 'w-16 max-md:hidden'} flex flex-col gap-4
       `}
     >
         {/** LOGO AND Icon */}
-        <div className={`py-4 px-4 border-b flex items-center justify-between ${!openSidebar && 'mx-auto'}`}>
+        <div className={`py-4 px-4 border-b dark:border-zinc-600 flex items-center justify-between ${!openSidebar && 'mx-auto'}`}>
             <SidebarLogo />
             <Menu 
               onClick={() => setOpenSidebar(!openSidebar)}
@@ -33,9 +32,8 @@ function SidebarNavigation() {
         </div>
 
         {/** user profile and theme-mode */}
-        <div className='border-t pt-4 flex items-center gap-4'>
+        <div className='border-t dark:border-zinc-600 pt-4'>
           <UserProfile />
-          <ModeToggle />
         </div>
     </div>
   )

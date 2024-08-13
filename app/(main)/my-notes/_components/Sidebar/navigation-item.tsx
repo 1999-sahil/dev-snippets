@@ -24,9 +24,9 @@ function NavigationLinks() {
   return (
     <div className="mx-2 flex flex-col justify-center">
       {openSidebar ? (
-        <h2 className="text-sm font-rubik font-semibold mb-4 ml-1 text-zinc-600 dark:text-zinc-200">Quick Links</h2>
+        <h2 className="text-sm font-rubik mb-4 ml-1 text-zinc-600 dark:text-zinc-200">Quick Links</h2>
       ) : (
-        <h2 className="text-xs font-rubik font-semibold mb-3 ml-1 text-zinc-600 dark:text-zinc-200">Links</h2>
+        <h2 className="text-xs font-rubik mb-3 ml-1 text-zinc-600 dark:text-zinc-200">Links</h2>
       )}
       <ul className="relative space-y-2">
         {sideBarMenu.map((menu, index) => (
@@ -45,7 +45,7 @@ function NavigationLinks() {
               style={{
                 transitionDelay: `${index + 3}00ms`
               }}
-              className={`whitespace-pre font-poppins text-sm duration-500 transition-all ${!openSidebar && 'opacity-0 translate-x-28 overflow-hidden'}`}>{menu.name}
+              className={`whitespace-pre font-poppins text-sm duration-300 transition-all ${!openSidebar && 'opacity-0 translate-x-28 overflow-hidden'}`}>{menu.name}
             </h2>
           </li>
         ))}

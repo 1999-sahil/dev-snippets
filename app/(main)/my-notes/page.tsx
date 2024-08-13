@@ -7,7 +7,7 @@ import SidebarNavigation from './_components/Sidebar/navigation-sidebar'
 
 function page() {
   return (
-    <div className=""> {/** {`flex w-full dark:bg-[#121213] bg-white`} */}
+    <div className="flex gap-4 w-full dark:bg-[#121213] bg-white"> {/** {`flex w-full dark:bg-[#121213] bg-white`} */}
       {/**
         <div className=''>
         <Sidebar />
@@ -19,6 +19,7 @@ function page() {
        */}
 
       <SidebarNavigation />
+      <ContentArea />
     </div>
   )
 }

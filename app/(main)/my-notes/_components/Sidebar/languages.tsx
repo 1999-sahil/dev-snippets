@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { BiLogoJavascript } from 'react-icons/bi'
 import { FaPython } from 'react-icons/fa'

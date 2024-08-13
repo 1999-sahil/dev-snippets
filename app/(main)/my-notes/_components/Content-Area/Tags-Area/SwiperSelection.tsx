@@ -18,7 +18,7 @@ function SwiperSelection() {
                     slidesPerView="auto"
                     spaceBetween={10}
                     freeMode={true}
-                    className='mySwiper'
+                    className='mySwiper font-poppins'
                     modules={[FreeMode]}
                 >
                     <SwiperSlide className='bg-[#F28500] p-1 rounded-md text-white w-20'>All</SwiperSlide>
@@ -32,8 +32,8 @@ function SwiperSelection() {
                     <SwiperSlide className='text-gray-800 dark:text-gray-200'>Frontend</SwiperSlide>
                     <SwiperSlide className='text-gray-800 dark:text-gray-200'>DevOps</SwiperSlide>
                 </Swiper>
-                <button className='bg-[#F28500] p-1 rounded-md px-2.5 flex gap-1 items-center text-white'>
-                    <Plus className='' />
+                <button className='bg-[#F28500] p-1 rounded-md px-2 flex gap-[2px] items-center text-white font-mukta'>
+                    <Plus className='w-5 h-5' />
                     <span className=''>Tag</span>
                 </button>
             </div>

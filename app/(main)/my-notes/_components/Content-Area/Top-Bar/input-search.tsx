@@ -1,11 +1,13 @@
-import { Search } from '@mui/icons-material'
+'use client'
+
+import { Search } from 'lucide-react'
 import React from 'react'
 import { FaAnglesRight } from 'react-icons/fa6'
 
 function SearchBar() {
   return (
     <div className='relative pl-3 max-md:pl-2 w-[60%] h-[38px] bg-white dark:bg-zinc-800 rounded-3xl flex items-center gap-2 max-md:gap-1'>
-      <Search className='text-[#F28500]' sx={{ fontSize: 20 }} />
+      <Search className='text-[#F28500]' />
       <input
         placeholder='Search your snippet ...'
         className='w-[60%] outline-none text-xs bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-300 font-poppins'

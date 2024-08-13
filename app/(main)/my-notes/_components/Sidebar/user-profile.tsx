@@ -1,5 +1,6 @@
 'use client'
 
+import { ModeToggle } from '@/components/theme-toggle';
 import { useGlobalContext } from '@/contexts/ContextApi';
 import { UserButton, useUser } from '@clerk/nextjs'
 import React from 'react'
@@ -24,13 +25,18 @@ function UserProfile() {
                 <UserButton />
             )}
         </div>
-        <div className={`whitespace-pre duration-500 transition-all leading-3 ${!openSidebar && 'opacity-0 translate-x-28 overflow-hidden'}`}>
-          <h2 className='font-semibold text-zinc-800 dark:text-zinc-200 font-poppins text-sm'>
-            {user?.firstName} {user?.lastName}
-          </h2>
-          <span className='font-semibold text-gray-700 dark:text-gray-200 font-mukta text-xs'>
+        <div className={`whitespace-pre flex items-center gap-4 duration-500 transition-all leading-3 ${!openSidebar && 'opacity-0 translate-x-28 overflow-hidden'}`}>
+          <div className=''>
+            <h2 className='font-semibold text-zinc-800 dark:text-zinc-200 font-poppins text-sm'>
+              {user?.firstName} {user?.lastName}
+            </h2>
+            <span className='font-semibold text-gray-700 dark:text-gray-200 font-mukta text-xs'>
             {user?.emailAddresses[0].emailAddress}
-          </span>
+           </span>
+          </div>
+          <div className=''>
+          <ModeToggle />
+          </div>
         </div>
     </div>
   )
