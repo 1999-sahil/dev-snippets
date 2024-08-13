@@ -14,7 +14,7 @@ function Sidebar() {
 
   return (
     <div className={`min-h-screen bg-zinc-200/50 max-md:bg-zinc-200 dark:bg-zinc-900 transition-all duration-500
-        ${openSidebar ? 'w-62 max-md:fixed max-md:z-50' : 'w-16 max-md:hidden'} flex flex-col gap-4
+        ${openSidebar ? 'w-72 max-md:fixed max-md:z-50' : 'w-16 max-md:hidden'} flex flex-col gap-4
       `}
     >
         {/** LOGO AND Icon */}

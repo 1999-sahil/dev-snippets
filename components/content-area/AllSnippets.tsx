@@ -5,7 +5,10 @@ import SingleSnippet from '../all-snippets/SingleSnippet'
 
 function AllSnippets() {
     return (
-        <div className='flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-6'>
+            <SingleSnippet />
+            <SingleSnippet />
+            <SingleSnippet />
             <SingleSnippet />
         </div>
     )

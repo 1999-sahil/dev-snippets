@@ -7,12 +7,10 @@ import AllSnippets from './AllSnippets'
 
 function ContentArea() {
     return (
-        <div className='flex flex-col gap-8 m-6'>
+        <div className='flex flex-col w-full gap-8 m-2 sm:m-6'>
             <TopBar />
-            {/**
-             * <TagSwiper />
+            <TagSwiper />
             <AllSnippets />
-             */}
         </div>
     )
 }
