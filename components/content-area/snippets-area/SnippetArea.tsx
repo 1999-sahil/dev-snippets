@@ -9,11 +9,16 @@ import { useGlobalContext } from '@/contexts/ContextApi'
 function SnippetArea() {
     const {
         openContentNoteObject: { openContentNote, setOpenContentNote },
+        isEditSnippetMobileObject: { isEditSnippetMobile, setIsEditSnippetMobile },
     } = useGlobalContext();
 
     return (
         <div className='flex gap-2'>
-            <div className={`${openContentNote ? 'w-1/2' : 'w-full'} flex flex-col gap-4`}>
+            <div className={`
+                    ${openContentNote ? `${isEditSnippetMobile ? "w-full" : "w-1/2"}` : 'w-full'}
+                    flex flex-col gap-4
+                `}
+            >
                 <TagSwiper />
                 <AllSnippets />
             </div>

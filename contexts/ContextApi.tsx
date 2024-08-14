@@ -1,7 +1,7 @@
 "use client";
 
 import { Captions, Heart, Home, LogOut, MoonStar, Sun, Trash } from "lucide-react";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 
 
@@ -35,6 +35,10 @@ interface GlobalContextType {
         openContentNote: boolean;
         setOpenContentNote: React.Dispatch<React.SetStateAction<boolean>>;
     };
+    isEditSnippetMobileObject: {
+        isEditSnippetMobile: boolean;
+        setIsEditSnippetMobile: React.Dispatch<React.SetStateAction<boolean>>;
+    };
 };
 
 const ContextProvider = createContext<GlobalContextType>({
@@ -54,6 +58,10 @@ const ContextProvider = createContext<GlobalContextType>({
         openContentNote: false,
         setOpenContentNote: () => {},
     },
+    isEditSnippetMobileObject: {
+        isEditSnippetMobile: false,
+        setIsEditSnippetMobile: () => {},
+    }
 });
 
 export default function GlobalContextProvider({
@@ -79,6 +87,26 @@ export default function GlobalContextProvider({
 
     const [openContentNote, setOpenContentNote] = useState(false);
 
+    const [isEditSnippetMobile, setIsEditSnippetMobile] = useState(false);
+
+    const handleResize = () => {
+        setIsEditSnippetMobile(window.innerWidth <= 640);
+    };
+
+    useEffect(() => {
+        // check window size on initial render
+        handleResize();
+
+        // add event listener for window resize
+        window.addEventListener("resize", handleResize);
+
+        // cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+
+    }, []);
+
     return (
         <ContextProvider.Provider
             value={{
@@ -86,6 +114,7 @@ export default function GlobalContextProvider({
                 darkModeObject: { darkMode, setDarkMode },
                 openSidebarObject: { openSidebar, setOpenSidebar },
                 openContentNoteObject: { openContentNote, setOpenContentNote },
+                isEditSnippetMobileObject: { isEditSnippetMobile, setIsEditSnippetMobile },
             }}
         >
             {children}
