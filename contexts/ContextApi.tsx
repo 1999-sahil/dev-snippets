@@ -1,6 +1,6 @@
 "use client";
 
-import { Captions, Heart, LogOut, MoonStar, Sun, Trash } from "lucide-react";
+import { Captions, Heart, Home, LogOut, MoonStar, Sun, Trash } from "lucide-react";
 import React, { createContext, useContext, useState } from "react";
 
 
@@ -63,10 +63,11 @@ export default function GlobalContextProvider({
 }) {
 
     const [sideBarMenu, setSideBarMenu] = useState<SideBarMenu[]>([
-        { id: 1, name: "All Snippets", isSelected: true, icons: <Captions size={20} /> },
-        { id: 2, name: "Favorites", isSelected: false, icons: <Heart size={20} /> },
-        { id: 3, name: "Trash", isSelected: false, icons: <Trash size={20} /> },
-        { id: 4, name: "Logout", isSelected: false, icons: <LogOut size={20} /> },
+        { id: 2, name: "Home", isSelected: true, icons: <Home size={20} /> },
+        { id: 2, name: "Snippets", isSelected: false, icons: <Captions size={20} /> },
+        { id: 3, name: "Favorites", isSelected: false, icons: <Heart size={20} /> },
+        { id: 4, name: "Trash", isSelected: false, icons: <Trash size={20} /> },
+        { id: 5, name: "Logout", isSelected: false, icons: <LogOut size={20} /> },
     ]);
 
     const [darkMode, setDarkMode] = useState<DarkModeType[]>([

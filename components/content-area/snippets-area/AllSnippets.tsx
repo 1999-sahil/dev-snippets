@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import SingleSnippet from '../all-snippets/SingleSnippet'
+import SingleSnippet from '../../all-snippets/SingleSnippet'
 
 function AllSnippets() {
     return (

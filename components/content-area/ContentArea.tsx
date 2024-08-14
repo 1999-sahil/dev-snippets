@@ -2,15 +2,13 @@
 
 import React from 'react'
 import TopBar from '../topbar/Topbar'
-import TagSwiper from './TagSwiper'
-import AllSnippets from './AllSnippets'
+import SnippetArea from './snippets-area/SnippetArea'
 
 function ContentArea() {
     return (
-        <div className='flex flex-col w-full gap-8 m-2 sm:m-6'>
+        <div className='flex flex-col w-full gap-8 p-2 sm:m-6'>
             <TopBar />
-            <TagSwiper />
-            <AllSnippets />
+            <SnippetArea />
         </div>
     )
 }

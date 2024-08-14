@@ -22,30 +22,29 @@ function SidebarLinks() {
 
   return (
     <div className="mx-2 flex flex-col justify-center">
-      {openSidebar ? (
-        <h2 className="text-sm font-rubik mb-4 ml-1 text-zinc-600 dark:text-zinc-200">
-          Quick Links
-        </h2>
-      ) : (
-        <h2 className="text-xs font-rubik mb-3 ml-1 text-zinc-600 dark:text-zinc-200">
-          Links
-        </h2>
-      )}
-      <ul className="relative space-y-2">
+      <ul className="relative space-y-2 px-1">
         {sideBarMenu.map((menu, index) => (
           <li
             key={index}
             onClick={() => onMenuClick(index)}
-            className={`flex items-center cursor-pointer rounded-md p-2 select-none gap-2
+            className={`flex items-center cursor-pointer rounded-md select-none
               ${
                 menu.isSelected
                   ? "bg-[#F28500] text-white"
-                  : "text-gray-600 dark:text-gray-400 hover:bg-zinc-300 dark:hover:bg-zinc-800"
+                  : "text-gray-600 dark:text-gray-300 hover:bg-zinc-300 dark:hover:bg-zinc-800"
               }
+              ${!openSidebar ? "flex flex-col items-center justify-center p-[5px] gap-[2px]" : "p-2 gap-2"}
             `}
           >
-            <span className="ml-1">{menu.icons}</span>
-            <h2
+            <span>
+              {menu.icons}
+            </span>
+            {!openSidebar ? (
+              <h2 className={`text-[10px] font-mukta font-semibold`}>
+                {menu.name}
+              </h2>
+            ) : (
+              <h2
               style={{
                 transitionDelay: `${index + 3}00ms`,
               }}
@@ -55,6 +54,8 @@ function SidebarLinks() {
             >
               {menu.name}
             </h2>
+            )}
+            
           </li>
         ))}
       </ul>
