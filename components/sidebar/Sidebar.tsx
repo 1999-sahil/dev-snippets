@@ -14,7 +14,7 @@ function Sidebar() {
 
   return (
     <div className={`min-h-screen bg-zinc-200 max-md:bg-zinc-200 dark:bg-zinc-900 transition-all duration-500
-        ${openSidebar ? 'w-72 fixed z-50' : 'w-20 max-md:hidden'} flex flex-col gap-4
+        ${openSidebar ? 'w-72 fixed z-50' : 'w-[72px] max-lg:hidden'} flex flex-col gap-4
       `}
     >
         {/** LOGO AND Icon */}
@@ -32,7 +32,7 @@ function Sidebar() {
         </div>
 
         {/** user profile and theme-mode */}
-        <div className='border-t dark:border-zinc-600 pt-4'>
+        <div className={`${openSidebar ? "" : "pl-1.5"} border-t dark:border-zinc-600 pt-4`}>
           <UserProfile />
         </div>
     </div>

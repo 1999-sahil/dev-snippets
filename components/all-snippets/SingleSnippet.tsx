@@ -1,6 +1,6 @@
 'use client'
 
-import { useGlobalContext } from '@/contexts/ContextApi'
+import { SingleSnippetType, useGlobalContext } from '@/contexts/ContextApi'
 import { Trash } from 'lucide-react'
 import React from 'react'
 import { FaRegHeart } from 'react-icons/fa'
@@ -8,115 +8,120 @@ import { SiJavascript } from 'react-icons/si'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-function SingleSnippet() {
+interface SingleSnippetProps {
+    note: SingleSnippetType;
+};
+
+function SingleSnippet({ 
+    note 
+}: SingleSnippetProps) {
     const {
-        openContentNoteObject: { openContentNote, setOpenContentNote }
+        openContentNoteObject: { openContentNote, setOpenContentNote },
+        selectedSnippetObject: { selectedSnippet, setSelectedSnippet },
     } = useGlobalContext();
+
+    const { title, creationDate, tags, description, code, language, isFavorite } = note;
 
     return (
         <div
-            onClick={() => setOpenContentNote(true)} 
-            className={`bg-zinc-200/50 dark:bg-zinc-900 max-sm:w-full w-[260px] rounded-md pt-4 border hover:border-zinc-400 dark:hover:border-zinc-600
-                ${openContentNote ? "w-full" : "w-[380px]"}
+            onClick={() => { 
+                    setOpenContentNote(true);
+                    setSelectedSnippet(note);
+                }
+            } 
+            className={`flex flex-col gap-2 bg-zinc-100 dark:bg-zinc-900 max-md:w-full w-[250px] h-fit px-3 py-2 rounded-md border hover:border-zinc-300 dark:hover:border-zinc-600
+                ${openContentNote ? "max-w-full" : "w-[250px]"}
             `}
         >
-            <NoteHeader />
-            <NoteDate />
-            <NoteTags />
-            <NoteDescription />
-            <CodeBlock language="javascript" />
-            <NoteFooter />
+            <NoteDate date={creationDate} isFavorite={isFavorite} />
+            <NoteHeader title={title} />
+            <NoteTags tags={tags} />
+            <NoteDescription desc={description} />
+            <CodeBlock language="javascript" code={code} />
+            <NoteFooter language={language} />
         </div>
     )
 }
 
-function NoteHeader() {
-    return (
-        <div className="flex justify-between mx-4">
-            <span className="font-semibold text-base w-[87%] font-poppins text-orange-500">
-                {`React.js hook for state management useState() and useEffect()`}
-            </span>
-            <FaRegHeart size={15} className='cursor-pointer' />
-        </div>
-    )
-}
+function NoteHeader({ title }: { title: string }) {
+    const truncatedTitle = title.slice(0, 150);
 
-function NoteDate() {
     return (
-        <div className="flex gap-1 font-light mx-4 mt-1">
-            <span className='text-sm font-semibold font-mukta text-gray-700 dark:text-gray-400'>Aug 12, 2024</span>
-        </div>
-    )
-}
-
-function NoteTags() {
-    return (
-        <div className="flex flex-wrap gap-1 text-[11px] mx-4 mt-4">
-            <span className='p-1 font-rubik rounded-3xl px-2 bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-300'>
-                functions
-            </span>
-            <span className='p-1 font-rubik rounded-3xl px-2 bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-300'>
-                javascript
-            </span>
-            <span className='p-1 font-rubik rounded-3xl px-2 bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-300'>
-                reactjs
-            </span>
-            <span className='p-1 font-rubik rounded-3xl px-2 bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-300'>
-                nextjs
-            </span>
-            <span className='p-1 font-rubik rounded-3xl px-2 bg-gray-300 text-gray-900 dark:bg-gray-800 dark:text-gray-300'>
-                SSR
+        <div className="h-[80px] pt-2">
+            <span className="font-semibold text-base font-poppins text-zinc-800 dark:text-zinc-300 block overflow-hidden max-h-full">
+                {truncatedTitle}...
             </span>
         </div>
     )
 }
 
-function NoteDescription() {
+function NoteDate({ date, isFavorite }: { date: string, isFavorite: boolean }) {
     return (
-        <div className='text-zinc-700 dark:text-zinc-200 mt-4 mx-4 text-sm font-rubik'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos quisquam atque perspiciatis explicabo rerum, deleniti consequatur molestiae tenetur ex maxime voluptates dolore, suscipit repellendus harum ab eligendi soluta sunt!
+        <div className="flex justify-between h-[20px] items-center">
+            <span className='text-xs font-semibold font-mukta text-gray-700 dark:text-gray-400'>
+                {date}
+            </span>
+            <span>
+                <FaRegHeart size={15} className='cursor-pointer' />
+            </span>
+        </div>
+    )
+}
+
+function NoteTags({ tags }: { tags: string[] }) {
+    return (
+        <div className="flex flex-wrap h-[40px] py-1 text-[11px]">
+            <span className='space-x-2'>
+                {tags.map((tag, index) => (
+                    <span
+                        key={index} 
+                        className='bg-orange-200 dark:bg-orange-500 text-orange-600 dark:text-orange-200 capitalize rounded-md px-2 py-1 font-rubik font-normal'
+                    >
+                        {tag}
+                    </span>
+                ))}
+            </span>
+        </div>
+    )
+}
+
+function NoteDescription({ desc }: { desc: string }) {
+    return (
+        <div className='text-zinc-700 h-[60px] dark:text-zinc-200 text-sm font-rubik'>
+            {desc}
         </div>
     )
 }
 
 interface CodeBlockProps {
     language: string;
+    code: string
 }
 
 function CodeBlock({
     language,
+    code,
 }: CodeBlockProps) {
-    const codeString = `
-        import React from 'react';
-
-        function fun() {
-            return (
-                <div>Hello, World</div>
-            )
-        }
-
-        export default fun;
-    `
     return (
-        <div className='rounded-md overflow-hidden text-xs p-2'>
+        <div className='rounded-md overflow-hidden h-[100px] text-xs'>
             <SyntaxHighlighter
                 language={language}
                 style={{
                     dark
                 }}
             >
-                {codeString}
+                {code}
             </SyntaxHighlighter>
         </div>
 
     )
 }
 
-function NoteFooter() {
+function NoteFooter({ language }: { language: string }) {
     return (
-        <div className="flex justify-between text-xs mt-3 px-4 py-3 border-t">
+        <div className="flex mt-2 pt-2 justify-between items-center text-xs h-[30px] border-t">
             <div className="flex gap-1 items-center font-rubik text-gray-700 dark:text-gray-300">
-                <SiJavascript size={15} /> Javascript
+                <SiJavascript size={15} /> {language}
             </div>
             <Trash className='cursor-pointer hover:text-rose-500' size={15} />
         </div>

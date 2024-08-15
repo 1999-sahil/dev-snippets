@@ -8,7 +8,9 @@ function page() {
   return (
     <div className="flex w-full dark:bg-[#121213] bg-white">
       <Sidebar />
-      <ContentArea />
+      <div className='max-w-full p-4'>
+        <ContentArea />
+      </div>
     </div>
   )
 }
